@@ -1,0 +1,30 @@
+#Nos pide un nombre. Si el nombre se encuentra en la agenda, debe mostrar el teléfono y, 
+# opcionalmente, permitir modificarlo si no es correcto. Si el nombre no se encuentra, 
+# debe permitir ingresar el teléfono correspondiente.
+#Realizado por Rosario Santos Fernández a día de 10/3/2022 a las 9:00
+agenda = {}
+while True:
+    print("__________________________")
+    print("|Elige una opcion        |")
+    print("__________________________")
+    print("|1. Añadir/modificar     |")
+    print("|2. Buscar               |")
+    print("|3. Borrar               |")
+    print("|4. Listar               |")
+    print("|5. Salir                |")
+    print("__________________________")
+    
+    opcion = int(input("Indica una opcion para comenzar a usar la agenda:"))
+    if opcion == 1:
+        nombre = input("Nombre del contacto:")    
+        if nombre in agenda:
+            print("%s ya existe su número de teléfono es %s" % (nombre,agenda[nombre]))
+            opcion = input("Pulsa 'm' si quieres modificarlo!!!. Otra tecla para continuar.")
+            if opcion == "m":
+                numero = input("Dime el nuevo número de teléfono:")
+                agenda[nombre]=numero
+        else:
+            numero = input("Dime el número de teléfono:")
+            agenda[nombre]=numero
+   
+
